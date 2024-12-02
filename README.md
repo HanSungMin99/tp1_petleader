@@ -4,7 +4,7 @@
 > **훈련사와 반려견 패밀리를 이어주는 플랫폼** <br>
 > **개발기간: 2024.12.02 ~ 2024.12.03**
 
-## 팀원소개
+## 👍Team All for joonhuk 팀원소개
 |🐻고준혁|🐹최영재|🐰한성민|🐻‍❄️홍성혁|
 |:-:|:-:|:-:|:-:|
 |<img src="https://github.com/beyond-sw-camp/be11-1st-1team-PetLeader/blob/main/dir/images/%EA%B3%A0.jpg">|<img src="https://github.com/beyond-sw-camp/be11-1st-1team-PetLeader/blob/main/dir/images/%EC%B5%9C.png">|<img src="https://github.com/beyond-sw-camp/be11-1st-1team-PetLeader/blob/main/dir/images/%ED%95%9C.jpg">|<img src="https://github.com/beyond-sw-camp/be11-1st-1team-PetLeader/blob/main/dir/images/%ED%99%8D.jpg">|
