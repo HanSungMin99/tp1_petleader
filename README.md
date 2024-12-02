@@ -70,7 +70,7 @@
 
 ## ‼️자료
 #### 1️⃣WBS
-![petleader]()
+![petleader](https://github.com/beyond-sw-camp/be11-1st-1team-PetLeader/blob/main/dir/images/wbs%EC%88%98%EC%A0%95.png)
      >저희 팀은 프로젝트의 모든 작업과 구성 요소를 체계적으로 나누어 관리하기 위하여 WBS를 작성하였습니다.
 
 #### 2️⃣JIRA
