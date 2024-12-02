@@ -80,7 +80,7 @@
 
 
 #### 4️⃣논리적 ERD
-![petleader](https://github.com/beyond-sw-camp/be11-1st-1team-PetLeader/blob/main/dir/images/Copy%20of%20animal%20table.png)
+![petleader](https://github.com/beyond-sw-camp/be11-1st-1team-PetLeader/blob/main/dir/images/erdcloud%20%EC%88%98%EC%A0%95.png)
 
 ---
 
