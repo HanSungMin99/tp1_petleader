@@ -1,5 +1,5 @@
 # be11-1st-1team-PetLeader
-![나랑,사귈래 배너]()
+![petleader배너](./dir/images/배너.gif)
 
 ## 팀소개
 
