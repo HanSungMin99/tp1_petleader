@@ -71,10 +71,11 @@
 ## ‼️자료
 #### 1️⃣WBS
 ![petleader](https://github.com/beyond-sw-camp/be11-1st-1team-PetLeader/blob/main/dir/images/wbs.png)
+     >저희 팀은 프로젝트의 모든 작업과 구성 요소를 체계적으로 나누어 관리하기 위하여 WBS를 작성하였습니다.
 
 #### 2️⃣JIRA
-
-
+![petleader](https://github.com/beyond-sw-camp/be11-1st-1team-PetLeader/blob/main/dir/images/jira.png)
+    >저희 팀은 이슈의 우선순위를 설정하여 중요한 작업에 집중하며 효율적인 이슈 관리하고, 팀원들이 진행 상황을 쉽게 추적하기 위해서 JIRA 플랫폼을 이용하였습니다.
 
 #### 3️⃣요구사항 정의 및 분석서
 
