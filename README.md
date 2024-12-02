@@ -79,7 +79,7 @@
 
 #### 3️⃣notion
 ![petleader](https://github.com/beyond-sw-camp/be11-1st-1team-PetLeader/blob/main/dir/images/notion.png)    
-    >저희 팀은 각 단계에서 수행한 작업을 정리하고 기록하고자 notion을 이용하였습니다.
+    >저희 팀은 각 단계에서 수행한 작업을 정리하고 기록하고자 notion을 이용하였습니다. <br>
     >혹시나 데이터를 잃어버릴 수 있을 것을 대비하여 테이블 생성 과정, 데이터 입력 값(최소20개 이상), 프로시저 등을 모아 정리하는데 notion을 이용하였습니다.
     
 #### 4️⃣요구사항 정의 및 분석서
