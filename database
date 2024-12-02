@@ -1,0 +1,5 @@
+create database animal_trainning;
+use animal_trainning;
+show variables like 'character_set_server';
+alter DATABASE animal_trainning DEFAULT CHARACTER SET = utf8mb4;
+
