@@ -70,7 +70,7 @@
 
 ## ‼️자료
 #### 1️⃣WBS
-
+![petleader](https://github.com/beyond-sw-camp/be11-1st-1team-PetLeader/blob/main/dir/images/wbs.png)
 
 #### 2️⃣JIRA
 
