@@ -3,12 +3,25 @@
 ![petleader배너](./dir/images/배너.gif)
 > **훈련사와 반려견 패밀리를 이어주는 플랫폼** <br>
 > **개발기간: 2024.12.02 ~ 2024.12.03**
+
 ---
+
 ## 👍Team All for joonhyuk 팀원소개
 |🐻고준혁|🐹최영재|🐰한성민|🐻‍❄️홍성혁|
 |:-:|:-:|:-:|:-:|
 |<img src="https://github.com/beyond-sw-camp/be11-1st-1team-PetLeader/blob/main/dir/images/%EA%B3%A0.jpg">|<img src="https://github.com/beyond-sw-camp/be11-1st-1team-PetLeader/blob/main/dir/images/%EC%B5%9C.png">|<img src="https://github.com/beyond-sw-camp/be11-1st-1team-PetLeader/blob/main/dir/images/%ED%95%9C.jpg">|<img src="https://github.com/beyond-sw-camp/be11-1st-1team-PetLeader/blob/main/dir/images/%ED%99%8D.jpg">|
 |[@luail](https://github.com/luail)|[@impitang](https://github.com/gimpitang)|[@HanSungMin99](https://github.com/HanSungMin99)|[@dksqjq4851](https://github.com/dksqjq4851)|
+
+---
+
+### 🔨 기술 스택
+<div>
+<img src="https://img.shields.io/badge/mysql-4479A1?style=for-the-badge&logo=mysql&logoColor=white">
+<img src="https://img.shields.io/badge/git-F05032?style=for-the-badge&logo=git&logoColor=white">
+<img src="https://img.shields.io/badge/github-181717?style=for-the-badge&logo=github&logoColor=white">
+<img src="https://img.shields.io/badge/mariaDB-003545?style=for-the-badge&logo=mariaDB&logoColor=white">
+</div>
+
 ---
 ## ‼️**프로젝트 개요**
 
@@ -29,7 +42,9 @@
    •	훈련사는 플랫폼을 통해 더 많은 고객을 확보하고, 신뢰도를 높일 수 있습니다.<br>
    •	데이터베이스를 통해 훈련 사례 및 효과적인 프로그램을 공유함으로써 반려견 훈련 분야 전반의 발전에 기여할 수 있습니다..<br>
    •	강아지의 행동 문제 해결로 반려인의 스트레스 감소 및 반려견의 삶의 질 향상시킬 수 있습니다.<br>
+   
 ---
+
 ## ‼️프로젝트 소개
   >이 프로젝트는 전국의 강아지 훈련 서비스 제공자를 데이터베이스로 정리하여 플랫폼화하는 것을 목표로 합니다.<br>
   >1.	**주요 기능**<br>
@@ -39,7 +54,9 @@
   >2.	**서비스 방식**<br>
    •	웹사이트 및 모바일 앱을 통해 누구나 접근 가능.<br>
    •	훈련사와 반려인을 연결하는 수강신청 서비스 제공<br>
+   
 ---
+
 ## ‼️프로젝트 필요성
   >1.	**반려견 수 증가**<br>
     반려동물을 키우는 인구가 증가함에 따라, 강아지 훈련 서비스에 대한 수요가 꾸준히 늘어나고 있습니다.<br>
@@ -50,7 +67,9 @@
   >4.	**반려동물 산업의 성장 가능성**<br>
     반려동물 관련 서비스는 지속적으로 성장하는 시장으로, 플랫폼화된 훈련 서비스 데이터베이스는 반려동물 산업 내에서 큰 경쟁력을 가질 수 있습니다.<br>
     이 데이터베이스 프로젝트는 반려인의 편의를 높이고, 강아지 훈련 시장을 체계적으로 정비하며, 더 나아가 반려동물 문화의 선진화를 도모하는 데 기여할 것입니다.<br>
+    
 ---
+
 ## ‼️자료
 #### 1️⃣요구사항정의서 
 
