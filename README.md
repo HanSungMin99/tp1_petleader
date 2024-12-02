@@ -7,7 +7,7 @@
 ## 팀원소개
 |고준혁|최영재|한성민|홍성혁|
 |:-:|:-:|:-:|:-:|
-|<img src="https://github.com/beyond-sw-camp/be11-1st-1team-PetLeader/blob/main/dir/images/%EA%B3%A0.jpg">|<img src="https://github.com/beyond-sw-camp/be11-1st-1team-PetLeader/blob/main/dir/images/%EC%B5%9C.png">|<img src="https://github.com/beyond-sw-camp/be11-1st-1team-PetLeader/blob/main/dir/images/han.png">|<img src="https://github.com/beyond-sw-camp/be11-1st-1team-PetLeader/blob/main/dir/images/%ED%99%8D.jpg">|
+|<img src="https://github.com/beyond-sw-camp/be11-1st-1team-PetLeader/blob/main/dir/images/%EA%B3%A0.jpg">|<img src="https://github.com/beyond-sw-camp/be11-1st-1team-PetLeader/blob/main/dir/images/%EC%B5%9C.png">|<img src="https://github.com/beyond-sw-camp/be11-1st-1team-PetLeader/blob/main/dir/images/%ED%95%9C.jpg">|<img src="https://github.com/beyond-sw-camp/be11-1st-1team-PetLeader/blob/main/dir/images/%ED%99%8D.jpg">|
 |[@gayeon99](https://github.com/gayeon99)|[@jykim1187](https://github.com/jykim1187)|[@LetsSeeTerrapin](https://github.com/LetsSeeterrapin)|[@ki-hyun-Jang](https://github.com/ki-hyun-Jang)|<img src=
 
 ## 개요
