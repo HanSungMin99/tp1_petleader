@@ -1,7 +1,9 @@
 # be11-1st-1team-PetLeader
+
+## 팀배너
 ![petleader배너](./dir/images/배너.gif)
 
-## 팀소개
+## 팀원소개
 
 ## 개요
 #### **추진 배경 및 목적**<br>
