@@ -3,13 +3,13 @@
 ![petleader배너](./dir/images/배너.gif)
 > **훈련사와 반려견 패밀리를 이어주는 플랫폼** <br>
 > **개발기간: 2024.12.02 ~ 2024.12.03**
-
+---
 ## 👍Team All for joonhyuk 팀원소개
 |🐻고준혁|🐹최영재|🐰한성민|🐻‍❄️홍성혁|
 |:-:|:-:|:-:|:-:|
 |<img src="https://github.com/beyond-sw-camp/be11-1st-1team-PetLeader/blob/main/dir/images/%EA%B3%A0.jpg">|<img src="https://github.com/beyond-sw-camp/be11-1st-1team-PetLeader/blob/main/dir/images/%EC%B5%9C.png">|<img src="https://github.com/beyond-sw-camp/be11-1st-1team-PetLeader/blob/main/dir/images/%ED%95%9C.jpg">|<img src="https://github.com/beyond-sw-camp/be11-1st-1team-PetLeader/blob/main/dir/images/%ED%99%8D.jpg">|
 |[@luail](https://github.com/luail)|[@impitang](https://github.com/gimpitang)|[@HanSungMin99](https://github.com/HanSungMin99)|[@dksqjq4851](https://github.com/dksqjq4851)|
-
+---
 ## 개요
 #### **추진 배경 및 목적**<br>
   강아지와 함께 생활하는 사람들이 늘어나면서, 반려견의 올바른 행동 교육과 훈련에 대한 수요도 급증하고 있습니다.<br>
