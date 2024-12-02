@@ -5,6 +5,10 @@
 ![petleader배너](./dir/images/배너.gif)
 
 ## 팀원소개
+|고준혁|최영재|한성민|홍성혁|
+|:-:|:-:|:-:|:-:|
+|<img src="https://github.com/user-attachments/assets/f85676a0-86ab-4848-8c2f-47c481aaae80" width=200 height=200>|<img src="https://github.com/user-attachments/assets/7fe3fd8a-1fbf-4a3b-ba53-f4fd39a14ce2" width=200 height=200>|<img src="https://github.com/user-attachments/assets/1ed712cb-330e-4eb4-a06d-2fd3c8a4a706" width=200 height=200>|<img src="https://github.com/user-attachments/assets/c7298255-dbbf-4ac3-9115-aa1926834af5" width=200 height=200>|
+|[@gayeon99](https://github.com/gayeon99)|[@jykim1187](https://github.com/jykim1187)|[@LetsSeeTerrapin](https://github.com/LetsSeeterrapin)|[@ki-hyun-Jang](https://github.com/ki-hyun-Jang)|
 
 ## 개요
 #### **추진 배경 및 목적**<br>
