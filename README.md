@@ -161,8 +161,6 @@ begin
 //
 DELIMITER ;
 ```
-
-</details>
 #### <details> <summary><b> 2. 로그인 🔑</b></summary> <div markdown="1">
 ![petleader](https://github.com/beyond-sw-camp/be11-1st-1team-PetLeader/blob/main/dir/images/%EB%A1%9C%EA%B7%B8%EC%9D%B8%EC%98%81%EC%83%81.gif)
 ```sql
@@ -182,11 +180,18 @@ delimiter //
     // delimiter ;
 
 ```
-
-</details>
 #### <details> <summary><b>1. 회원가입 🔑</b></summary> <div markdown="1">
 
 
 
 #### <details> <summary><b>1. 회원가입 🔑</b></summary> <div markdown="1">
+
+
+---
+
+## ‼️ 회고
+|🐻고준혁|
+|🐹최영재|
+|🐰한성민|
+|🐻‍❄️홍성혁|
 
