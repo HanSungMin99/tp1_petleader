@@ -161,7 +161,6 @@ begin
 //
 DELIMITER ;
 ```
-
 #### <details> <summary><b> 2. 로그인 🔑 </b></summary> <div markdown="1">
 ![petleader](https://github.com/beyond-sw-camp/be11-1st-1team-PetLeader/blob/main/dir/images/%EB%A1%9C%EA%B7%B8%EC%9D%B8%EC%98%81%EC%83%81.gif)
 ```sql
@@ -179,8 +178,8 @@ delimiter //
     end if;
     end
     // delimiter ;
-
 ```
+
 #### <details> <summary><b> 3. 비밀번호 수정 🔑 </b></summary> <div markdown="1">
 <details>
 ![petleader](https://github.com/beyond-sw-camp/be11-1st-1team-PetLeader/blob/main/dir/images/%EB%B9%84%EB%B0%80%EB%B2%88%ED%98%B8%EB%B3%80%EA%B2%BD.gif)
@@ -197,6 +196,7 @@ begin
 end
 // delimiter ;
 ```
+	
 #### <details> <summary><b> 4. 아이디 찾기🔑 </b></summary> <div markdown="1">
 ![petleader](https://github.com/beyond-sw-camp/be11-1st-1team-PetLeader/blob/main/dir/images/%EC%95%84%EC%9D%B4%EB%94%94%EC%B0%BE%EA%B8%B0.gif)
 ```sql
@@ -211,6 +211,7 @@ begin
 end
 // delimiter //
 ```
+
 #### <details> <summary><b> 5.회원 긴급연락처 수정🔑 </b></summary> <div markdown="1">
 ![petleader](https://github.com/beyond-sw-camp/be11-1st-1team-PetLeader/blob/main/dir/images/%ED%9A%8C%EC%9B%90%EA%B8%B4%EA%B8%89%EC%97%B0%EB%9D%BD%EC%B2%98%EC%88%98%EC%A0%95.gif)
 ```sql
@@ -224,6 +225,7 @@ BEGIN
 END
 // DELIMITER ;
 ```
+
 #### <details> <summary><b> 6.내 정보 조회🔑 </b></summary> <div markdown="1">
 ![petleader](https://github.com/beyond-sw-camp/be11-1st-1team-PetLeader/blob/main/dir/images/%EB%82%B4%EC%A0%95%EB%B3%B4%EC%A1%B0%ED%9A%8C.gif)
 ```sql
@@ -234,6 +236,7 @@ begin
 end
 // delimiter ;
 ```
+
 #### <details> <summary><b> 7.내 강아지 등록하기 🔑 </b></summary> <div markdown="1">
 ![petleader](https://github.com/beyond-sw-camp/be11-1st-1team-PetLeader/blob/main/dir/images/%EA%B0%95%EC%95%84%EC%A7%80%EB%93%B1%EB%A1%9D.gif)
 ```sql
@@ -246,11 +249,13 @@ delimiter //
     end
     // delimiter ;
 ```
+
 #### <details> <summary><b> 8.🔑 </b></summary> <div markdown="1">
 ![petleader]()
 ```sql
 
 ```
+
 #### <details> <summary><b> 9.내 강아지 정보 조회🔑 </b></summary> <div markdown="1">
 ![petleader](https://github.com/beyond-sw-camp/be11-1st-1team-PetLeader/blob/main/dir/images/%EB%82%B4%EA%B0%95%EC%95%84%EC%A7%80%EC%A0%95%EB%B3%B4%ED%99%95%EC%9D%B8.gif)
 ```sql
@@ -264,6 +269,7 @@ end
 
 // delimiter ;
 ```
+
 #### <details> <summary><b> 10.수강 신청하기🔑 </b></summary> <div markdown="1">
 ![petleader](https://github.com/beyond-sw-camp/be11-1st-1team-PetLeader/blob/main/dir/images/%EC%88%98%EA%B0%95%EC%8B%A0%EC%B2%AD%ED%95%98%EA%B8%B0.gif)
 ```sql
@@ -282,12 +288,14 @@ end
 // delimiter ;
 
 ```
+
 #### <details> <summary><b> 11.🔑 </b></summary> <div markdown="1">
 ![petleader]()
 ```sql
 
 
 ```
+
 #### <details> <summary><b> 12.수강하고 싶은 수업을 알림예약 조회🔑 </b></summary> <div markdown="1">
 ![petleader](https://github.com/beyond-sw-camp/be11-1st-1team-PetLeader/blob/main/dir/images/%EB%B3%B8%EC%9D%B8%EC%9D%B4%EC%98%88%EC%95%BD%ED%95%9C%EC%88%98%EC%97%85%EC%A1%B0%ED%9A%8C.gif)
 ```sql
@@ -306,6 +314,7 @@ BEGIN
 END
 // DELIMITER ;
 ```
+
 #### <details> <summary><b> 13.강아지 크기별 수업조회🔑 </b></summary> <div markdown="1">
 ![petleader](https://github.com/beyond-sw-camp/be11-1st-1team-PetLeader/blob/main/dir/images/%EA%B0%95%EC%95%84%EC%A7%80%20%ED%81%AC%EA%B8%B0%EB%B3%84%20%EC%88%98%EC%97%85%EC%A1%B0%ED%9A%8C.gif)
 ```sql
@@ -324,6 +333,7 @@ begin
 end
 // DELIMITER ;
 ```
+
 #### <details> <summary><b> 14.수업료 낮은 순으로 수업 정렬🔑 </b></summary> <div markdown="1">
 ![petleader](https://github.com/beyond-sw-camp/be11-1st-1team-PetLeader/blob/main/dir/images/%EC%88%98%EC%97%85%EB%A3%8C%20%EB%82%AE%EC%9D%80%20%EC%88%9C%EC%9C%BC%EB%A1%9C%20%EC%88%98%EC%97%85%20%EC%A0%95%EB%A0%AC.gif)
 ```sql
@@ -334,6 +344,7 @@ BEGIN
 END
 // DELIMITER ;
 ```
+
 #### <details> <summary><b> 15.원하는 요일에 개설되어있는 수업 조회🔑 </b></summary> <div markdown="1">
 ![petleader](https://github.com/beyond-sw-camp/be11-1st-1team-PetLeader/blob/main/dir/images/%EC%9B%90%ED%95%98%EB%8A%94%20%EC%9A%94%EC%9D%BC%EC%97%90%20%EA%B0%9C%EC%84%A4%EB%90%98%EC%96%B4%EC%9E%88%EB%8A%94%20%EC%88%98%EC%97%85%20%EC%A1%B0%ED%9A%8C.gif)
 ```sql
