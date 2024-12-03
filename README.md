@@ -92,4 +92,14 @@
 
 ## ‼️ 프로시저 실행결과
 #### <details> <summary><b>1. 회원가입 🔑</b></summary> <div markdown="1">
+![petleader](https://github.com/beyond-sw-camp/be11-1st-1team-PetLeader/blob/main/dir/images/%ED%9A%8C%EC%9B%90%EA%B0%80%EC%9E%85.mp4)
+
+#### <details> <summary><b>1. 회원가입 🔑</b></summary> <div markdown="1">
+
+
+#### <details> <summary><b>1. 회원가입 🔑</b></summary> <div markdown="1">
+
+
+
+#### <details> <summary><b>1. 회원가입 🔑</b></summary> <div markdown="1">
 
