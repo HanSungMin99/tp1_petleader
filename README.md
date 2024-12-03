@@ -250,9 +250,9 @@ end
 ![petleader]()
 ```sql
 
-
+<details>
 ```
-</details>
+
 ---
 
 ## ‼️ 회고
