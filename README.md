@@ -91,6 +91,43 @@
 
 ---
 
+## ‼️주요 쿼리 요약
+#### DDL<br>
+```sql
+CREATE DATABASE pet;
+USE pet;
+CREATE TABLE address(id BIGINT PRIMARY KEY AUTO_INCREMENT, state VARCHAR(255) NOT NULL, city VARCHAR(255) NOT NULL, street VARCHAR(255) NOT NULL);
+```sql
+CREATE TABLE owner (id BIGINT PRIMARY KEY AUTO_INCREMENT, password VARCHAR(255) NOT NULL, address_id BIGINT NOT NULL, name VARCHAR(30) NOT NULL, email VARCHAR(50), phone VARCHAR(255) NOT NULL,  em_phone VARCHAR(255), age INT, valid ENUM("Y","N") NOT NULL, created_time DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP(), nickname VARCHAR(30) NOT NULL UNIQUE, FOREIGN KEY (address_id) REFERENCES address(id));
+```sql
+CREATE TABLE dog ( id BIGINT PRIMARY KEY AUTO_INCREMENT, owner_id BIGINT NOT NULL, name VARCHAR(255) NOT NULL, age INT NOT NULL, gender ENUM("male","female") NOT NULL, size ENUM("소","중","대"), sign_date DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP(), FOREIGN KEY (owner_id) REFERENCES owner(id));
+```sql
+CREATE TABLE trainer(id BIGINT PRIMARY KEY AUTO_INCREMENT, nickname VARCHAR(255) NOT NULL UNIQUE, name VARCHAR(255) NOT NULL, age INT, gender ENUM('male', 'female') NOT NULL, career INT NOT NULL DEFAULT 0);
+```sql
+CREATE TABLE speciality( id BIGINT PRIMARY KEY AUTO_INCREMENT, name VARCHAR(255) NOT NULL, trainer_id BIGINT NOT NULL, FOREIGN KEY (trainer_id) REFERENCES trainer(id));
+```sql
+CREATE TABLE chat( id BIGINT PRIMARY KEY AUTO_INCREMENT, sender ENUM('보호자', '훈련사') NOT NULL, lasttime DATETIME DEFAULT CURRENT_TIMESTAMP(), contents VARCHAR(3000) NOT NULL, owner_id BIGINT, trainer_id BIGINT, FOREIGN KEY (owner_id) REFERENCES owner(id), FOREIGN KEY (trainer_id) REFERENCES trainer(id));
+```sql
+CREATE TABLE trainer_class (id BIGINT PRIMARY KEY NOT NULL AUTO_INCREMENT, trainer_id BIGINT NOT NULL, name VARCHAR(255) NOT NULL, fee INT NOT NULL, location VARCHAR(255) NOT NULL, class_day ENUM('월', '화', '수', '목', '금', '토', '일') NOT NULL, training_time ENUM('1교시', '2교시', '3교시', '4교시', '5교시', '6교시', '7교시', '8교시', '9교시') NOT NULL, description VARCHAR(3000) NOT NULL, size ENUM('대', '중', '소') NOT NULL, limits INT NOT NULL, current INT NOT NULL DEFAULT 0, start_date DATE NOT NULL, FOREIGN KEY (trainer_id) REFERENCES trainer(id));
+```sql
+CREATE TABLE owner_class(id BIGINT PRIMARY KEY AUTO_INCREMENT, owner_id BIGINT NOT NULL, trainer_class_id BIGINT NOT NULL, dog_id BIGINT NOT NULL, classjointime DATETIME DEFAULT CURRENT_TIMESTAMP, FOREIGN KEY (owner_id) REFERENCES owner(id), FOREIGN KEY (trainer_class_id) REFERENCES trainer_class(id), FOREIGN KEY (dog_id) REFERENCES dog(id));
+```sql
+CREATE TABLE post( post_id BIGINT PRIMARY KEY AUTO_INCREMENT, owner_class_id BIGINT NOT NULL, owner_id BIGINT NOT NULL, title VARCHAR(255) NOT NULL, contents VARCHAR(3000) NOT NULL, rating ENUM('1','2','3','4','5'), FOREIGN KEY (owner_class_id) REFERENCES owner_class(id), FOREIGN KEY (owner_id) REFERENCES owner(id));
+```sql
+CREATE TABLE alarm(id BIGINT PRIMARY KEY AUTO_INCREMENT, trainer_class_id BIGINT NOT NULL, owner_id BIGINT NOT NULL, created_time DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP(), FOREIGN KEY (trainer_class_id) REFERENCES trainer_class(id), FOREIGN KEY (owner_id) REFERENCES owner(id));
+```sql
+CREATE TABLE coupon ( id BIGINT PRIMARY KEY AUTO_INCREMENT, discount_amount INT NOT NULL, code VARCHAR(255) NOT NULL UNIQUE, name varchar(255) not null);
+```sql
+CREATE TABLE owner_coupon(id BIGINT PRIMARY KEY AUTO_INCREMENT, owner_id bigint not null, coupon_id bigint not null, issue_date datetime not null default current_timestamp(), expiration_date datetime, foreign key(owner_id) references owner(id), foreign key(coupon_id) references coupon(id));
+```sql
+CREATE TABLE payment(id BIGINT PRIMARY KEY AUTO_INCREMENT, owner_id BIGINT NOT NULL, class_id BIGINT NOT NULL, coupon_id bigint, amount INT NOT NULL, payment_date DATETIME DEFAULT CURRENT_TIMESTAMP(), FOREIGN KEY (owner_id) REFERENCES owner(id), FOREIGN KEY (class_id) REFERENCES owner_class(id), FOREIGN KEY (coupon_id) REFERENCES owner_coupon(id));
+```sql
+SHOW TABLES;
+
+
+
+---
+
 ## ‼️ 프로시저 실행결과
 #### <details> <summary><b>1. 회원가입 🔑</b></summary> <div markdown="1">
 ![petleader](https://github.com/beyond-sw-camp/be11-1st-1team-PetLeader/blob/main/dir/images/%ED%9A%8C%EC%9B%90%EA%B0%80%EC%9E%85.mp4)
