@@ -182,6 +182,7 @@ delimiter //
 
 ```
 #### <details> <summary><b> 3. 비밀번호 수정 🔑 </b></summary> <div markdown="1">
+<details>
 ![petleader](https://github.com/beyond-sw-camp/be11-1st-1team-PetLeader/blob/main/dir/images/%EB%B9%84%EB%B0%80%EB%B2%88%ED%98%B8%EB%B3%80%EA%B2%BD.gif)
 ```sql
 delimiter // 
@@ -250,7 +251,6 @@ end
 ![petleader]()
 ```sql
 
-<details>
 ```
 
 ---
