@@ -461,12 +461,22 @@ END
 // DELIMITER ;
 
 ```
-#### <details> <summary><b> 21.🔑 </b></summary> <div markdown="1">
-![petleader]()
+#### <details> <summary><b> 21.훈련사와대화하기🔑 </b></summary> <div markdown="1">
+![petleader](https://github.com/beyond-sw-camp/be11-1st-1team-PetLeader/blob/main/dir/images/%ED%9B%88%EB%A0%A8%EC%82%AC%EC%99%80%EB%8C%80%ED%99%94%ED%95%98%EA%B8%B0.gif)
 ```sql
+delimiter //
+create procedure 훈련사와대화하기(in 내닉네임 varchar(255),in 대화할훈련사닉네임 varchar(255), in 보내는사람 enum('보호자','훈련사'), in 전송할메시지 varchar(255))
+begin
+declare ownerId bigint;
+declare trainerId bigint;
 
-
+    select id into ownerId from owner where nickname = 내닉네임;
+    select id into trainerId from trainer where nickname = 대화할훈련사닉네임;
+    INSERT INTO chat (sender, contents, owner_id, trainer_id) VALUES(보내는사람, 전송할메시지, ownerId, trainerId);
+end
+// delimiter ;
 ```
+
 #### <details> <summary><b> 22.🔑 </b></summary> <div markdown="1">
 ![petleader]()
 ```sql
