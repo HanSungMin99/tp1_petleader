@@ -359,6 +359,76 @@ BEGIN
 END 
 // DELIMITER ;
 ```
+#### <details> <summary><b> 15.본인이 선택한 수업의 가격 조회🔑 </b></summary> <div markdown="1">
+![petleader](https://github.com/beyond-sw-camp/be11-1st-1team-PetLeader/blob/main/dir/images/%EB%B3%B8%EC%9D%B8%EC%9D%B4%EC%84%A0%ED%83%9D%ED%95%9C%EC%88%98%EC%97%85%EC%9D%98%EA%B0%80%EA%B2%A9%EC%A1%B0%ED%9A%8C.gif)
+```sql
+DELIMITER //
+CREATE PROCEDURE 본인이선택한수업의가격조회(IN 내email varchar(255))
+BEGIN
+    declare ownerId bigint;
+    select id into ownerId from owner where email = 내email ;
+    select
+        tc.name AS class_name,
+        tc.fee AS class_fee,
+        tc.location AS class_location,
+        tc.class_day AS class_day,
+        tc.training_time AS training_time,
+        tc.start_date AS start_date
+    from
+        owner_class oc
+    inner join
+        trainer_class tc ON oc.trainer_class_id = tc.id
+    where
+        oc.owner_id = ownerId;
+END //
+DELIMITER ;
+```
+#### <details> <summary><b> 16.🔑 </b></summary> <div markdown="1">
+![petleader]()
+```sql
+
+
+```
+
+#### <details> <summary><b> 17.훈련사정보와전문기술등록하기🔑 </b></summary> <div markdown="1">
+![petleader](https://github.com/beyond-sw-camp/be11-1st-1team-PetLeader/blob/main/dir/images/%ED%9B%88%EB%A0%A8%EC%82%AC%EC%A0%95%EB%B3%B4%EC%99%80%EC%A0%84%EB%AC%B8%EA%B8%B0%EC%88%A0%EB%93%B1%EB%A1%9D%ED%95%98%EA%B8%B0.gif)
+```sql
+DELIMITER //
+CREATE DEFINER=`root`@`localhost` PROCEDURE `훈련사정보와전문기술등록하기`(in 이름 varchar(255), in 나이 int, in 성별 enum('male', 'female'), in 경력 int, in 닉네임 varchar(255), in 전문분야 varchar(255))
+begin
+    declare trainerId bigint;
+    insert into trainer (name, age, gender, career, nickname)
+    values (이름, 나이, 성별, 경력, 닉네임);
+    set trainerId = last_insert_id();
+    insert into speciality (name, trainer_id)
+    values (전문분야, trainerId);
+end
+ // DELIMITER ;
+```
+#### <details> <summary><b> 18.🔑 </b></summary> <div markdown="1">
+![petleader]()
+```sql
+
+
+```
+
+#### <details> <summary><b> 19.원하는 성별의 훈련사 조회하기🔑 </b></summary> <div markdown="1">
+![petleader](https://github.com/beyond-sw-camp/be11-1st-1team-PetLeader/blob/main/dir/images/%EC%9B%90%ED%95%98%EB%8A%94%EC%84%B1%EB%B3%84%EC%9D%98%ED%9B%88%EB%A0%A8%EC%82%AC%EC%A1%B0%ED%9A%8C%ED%95%98%EA%B8%B0.gif)
+```sql
+delimiter //
+CREATE PROCEDURE 원하는성별의훈련사조회하기(IN 성별 enum('male','female'))
+BEGIN
+select name from trainer where gender=성별; 
+END;
+// delimiter ;
+```
+#### <details> <summary><b> 20.🔑 </b></summary> <div markdown="1">
+![petleader]()
+```sql
+
+
+```
+
 ---
 
 ## ‼️ 회고
