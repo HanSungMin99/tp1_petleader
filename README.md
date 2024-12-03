@@ -144,7 +144,6 @@ INSERT INTO payment (owner_id, class_id, coupon_id, amount, payment_date) VALUES
 ---
 
 ## ‼️프로시저 실행결과
-<details>
 #### <details> <summary><b> 1. 회원가입 🔑 </b></summary> <div markdown="1">
 ![petleader](https://github.com/beyond-sw-camp/be11-1st-1team-PetLeader/blob/main/dir/images/%ED%9A%8C%EC%9B%90%EA%B0%80%EC%9E%85.gif)
 ```sql
@@ -198,7 +197,7 @@ begin
 end
 // delimiter ;
 ```
-#### <details> <summary><b> 4. 아이디찾기🔑 </b></summary> <div markdown="1">
+#### <details> <summary><b> 4. 아이디 찾기🔑 </b></summary> <div markdown="1">
 ![petleader](https://github.com/beyond-sw-camp/be11-1st-1team-PetLeader/blob/main/dir/images/%EC%95%84%EC%9D%B4%EB%94%94%EC%B0%BE%EA%B8%B0.gif)
 ```sql
 delimiter //
@@ -212,27 +211,20 @@ begin
 end
 // delimiter //
 ```
-#### <details> <summary><b> 5. 아이디찾기🔑 </b></summary> <div markdown="1">
-![petleader](https://github.com/beyond-sw-camp/be11-1st-1team-PetLeader/blob/main/dir/images/%EC%95%84%EC%9D%B4%EB%94%94%EC%B0%BE%EA%B8%B0.gif)
+#### <details> <summary><b> 5.회원 긴급연락처 수정🔑 </b></summary> <div markdown="1">
+![petleader](https://github.com/beyond-sw-camp/be11-1st-1team-PetLeader/blob/main/dir/images/%ED%9A%8C%EC%9B%90%EA%B8%B4%EA%B8%89%EC%97%B0%EB%9D%BD%EC%B2%98%EC%88%98%EC%A0%95.gif)
 ```sql
-delimiter //
-CREATE PROCEDURE 아이디찾기(in 내닉네임 varchar(255), in 내휴대폰번호 varchar(255))
-begin
+DELIMITER //
+CREATE PROCEDURE 회원긴급연락처수정(in 긴급연락처 varchar(255), in 닉네임 varchar(255))
+BEGIN
 	declare ownerId bigint;
-	select id into ownerId from owner where nickname = 내닉네임 and phone = 내휴대폰번호;
-	IF ownerId IS NOT NULL THEN
-        select email from owner where id = ownerId;
-    END IF;
-end
-// delimiter //
+    select id into ownerId from owner where nickname = 닉네임;
+    update owner set phone=긴급연락처 where id = ownerId; 
+    select * from owner where id = ownerId;
+END
+// DELIMITER ;
 ```
-#### <details> <summary><b> 6.🔑 </b></summary> <div markdown="1">
-![petleader]()
-```sql
-
-// delimiter ;
-```
-#### <details> <summary><b> 7.내정보조회🔑 </b></summary> <div markdown="1">
+#### <details> <summary><b> 6.내 정보 조회🔑 </b></summary> <div markdown="1">
 ![petleader](https://github.com/beyond-sw-camp/be11-1st-1team-PetLeader/blob/main/dir/images/%EB%82%B4%EC%A0%95%EB%B3%B4%EC%A1%B0%ED%9A%8C.gif)
 ```sql
 delimiter //
@@ -242,18 +234,120 @@ begin
 end
 // delimiter ;
 ```
-#### <details> <summary><b> 7.🔑 </b></summary> <div markdown="1">
+#### <details> <summary><b> 7.내 강아지 등록하기 🔑 </b></summary> <div markdown="1">
+![petleader](https://github.com/beyond-sw-camp/be11-1st-1team-PetLeader/blob/main/dir/images/%EA%B0%95%EC%95%84%EC%A7%80%EB%93%B1%EB%A1%9D.gif)
+```sql
+delimiter //
+    create procedure 강아지등록(in 내이메일 varchar(255), in 강아지이름 varchar(255), in 나이 int, in 성별 enum('male','female'), in 사이즈 enum('대', '중', '소'))
+    begin
+    declare ownerId bigint;
+    select id into ownerId from owner where email = 내이메일;
+    insert into dog(owner_id,name, age, gender, size) values(ownerId,강아지이름, 나이, 성별, 사이즈);
+    end
+    // delimiter ;
+```
+#### <details> <summary><b> 8.🔑 </b></summary> <div markdown="1">
+![petleader]()
+```sql
+
+```
+#### <details> <summary><b> 9.내 강아지 정보 조회🔑 </b></summary> <div markdown="1">
+![petleader](https://github.com/beyond-sw-camp/be11-1st-1team-PetLeader/blob/main/dir/images/%EB%82%B4%EA%B0%95%EC%95%84%EC%A7%80%EC%A0%95%EB%B3%B4%ED%99%95%EC%9D%B8.gif)
+```sql
+delimiter //
+CREATE PROCEDURE 내강아지정보확인하기(in 내닉네임 varchar(30))
+begin
+declare ownerId bigint;
+select id into ownerId from owner where nickname = 내닉네임;
+select * from dog where owner_id = ownerId;
+end
+
+// delimiter ;
+```
+#### <details> <summary><b> 10.수강 신청하기🔑 </b></summary> <div markdown="1">
+![petleader](https://github.com/beyond-sw-camp/be11-1st-1team-PetLeader/blob/main/dir/images/%EC%88%98%EA%B0%95%EC%8B%A0%EC%B2%AD%ED%95%98%EA%B8%B0.gif)
+```sql
+delimiter //
+CREATE PROCEDURE 수강신청하기(in 내닉네임 varchar(255), in 훈련명 varchar(255), in 내강아지이름 varchar(255))
+begin
+declare ownerId bigint;
+declare dogId bigint;
+declare trainerClassId bigint;
+    select id into ownerId from owner where nickname = 내닉네임;
+    select id into trainerClassId from trainer_class where name = 훈련명;
+    select id into dogId from dog where name = 내강아지이름;
+    insert into owner_class (owner_id, trainer_class_id, dog_id) values(ownerId, trainerClassId ,dogId); 
+    select * from owner_class where owner_id = ownerId;
+end
+// delimiter ;
+
+```
+#### <details> <summary><b> 11.🔑 </b></summary> <div markdown="1">
 ![petleader]()
 ```sql
 
 
 ```
-#### <details> <summary><b> 7.🔑 </b></summary> <div markdown="1">
-![petleader]()
+#### <details> <summary><b> 12.수강하고 싶은 수업을 알림예약 조회🔑 </b></summary> <div markdown="1">
+![petleader](https://github.com/beyond-sw-camp/be11-1st-1team-PetLeader/blob/main/dir/images/%EB%B3%B8%EC%9D%B8%EC%9D%B4%EC%98%88%EC%95%BD%ED%95%9C%EC%88%98%EC%97%85%EC%A1%B0%ED%9A%8C.gif)
 ```sql
-
+DELIMITER //
+CREATE PROCEDURE 보호자본인이예약한수업조회(IN 내email varchar(255))
+BEGIN
+    declare ownerId bigint;
+    select id into ownerId from owner where email = 내email;
+    SELECT  tc.id AS class_id, tc.name AS class_name, tc.fee AS class_fee, tc.location AS class_location, tc.class_day AS class_day, tc.training_time AS training_time, tc.description AS class_description, tc.size AS class_size, tc.start_date AS class_start_date, d.name AS dog_name,  d.size AS dog_size
+    FROM owner_class oc
+    JOIN  trainer_class tc ON oc.trainer_class_id = tc.id
+    JOIN 
+        dog d ON oc.dog_id = d.id
+    WHERE 
+       oc.owner_id = ownerId ;
+END
+// DELIMITER ;
 ```
-
+#### <details> <summary><b> 13.강아지 크기별 수업조회🔑 </b></summary> <div markdown="1">
+![petleader](https://github.com/beyond-sw-camp/be11-1st-1team-PetLeader/blob/main/dir/images/%EA%B0%95%EC%95%84%EC%A7%80%20%ED%81%AC%EA%B8%B0%EB%B3%84%20%EC%88%98%EC%97%85%EC%A1%B0%ED%9A%8C.gif)
+```sql
+DELIMITER //
+create procedure 강아지크기별수업조회(IN 내이메일 varchar(255), IN dogSize ENUM('대', '중', '소'))
+begin
+    declare ownerId bigint;
+    select id into ownerId from owner where email = 내이메일 ;
+    select tc.id AS class_id, tc.name AS class_name, tc.fee AS class_fee, tc.location AS class_location, tc.class_day AS class_day, tc.training_time AS training_time, tc.description AS class_description, tc.size AS class_size, tc.limits AS participant_limit, tc.current AS current_participants, tc.start_date AS start_date
+    from
+        trainer_class tc
+    join
+        owner o ON o.id = ownerId
+    where
+        tc.size = dogSize;
+end
+// DELIMITER ;
+```
+#### <details> <summary><b> 14.수업료 낮은 순으로 수업 정렬🔑 </b></summary> <div markdown="1">
+![petleader](https://github.com/beyond-sw-camp/be11-1st-1team-PetLeader/blob/main/dir/images/%EC%88%98%EC%97%85%EB%A3%8C%20%EB%82%AE%EC%9D%80%20%EC%88%9C%EC%9C%BC%EB%A1%9C%20%EC%88%98%EC%97%85%20%EC%A0%95%EB%A0%AC.gif)
+```sql
+DELIMITER //
+CREATE PROCEDURE 수업료가낮은순으로수업정렬()
+BEGIN
+    select * from trainer_class order by fee;
+END
+// DELIMITER ;
+```
+#### <details> <summary><b> 15.원하는 요일에 개설되어있는 수업 조회🔑 </b></summary> <div markdown="1">
+![petleader](https://github.com/beyond-sw-camp/be11-1st-1team-PetLeader/blob/main/dir/images/%EC%9B%90%ED%95%98%EB%8A%94%20%EC%9A%94%EC%9D%BC%EC%97%90%20%EA%B0%9C%EC%84%A4%EB%90%98%EC%96%B4%EC%9E%88%EB%8A%94%20%EC%88%98%EC%97%85%20%EC%A1%B0%ED%9A%8C.gif)
+```sql
+DELIMITER //
+CREATE PROCEDURE 원하는요일에개설되어있는수업조회(IN desiredDay ENUM('월', '화', '수', '목', '금', '토', '일'))
+BEGIN
+    select *  from trainer_class tc
+    join
+        trainer t ON tc.trainer_id = t.id
+   where
+        tc.class_day = desiredDay ;
+END 
+// DELIMITER ;
+```
 ---
 
 ## ‼️ 회고
