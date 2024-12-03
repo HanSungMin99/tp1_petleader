@@ -144,7 +144,7 @@ INSERT INTO payment (owner_id, class_id, coupon_id, amount, payment_date) VALUES
 ---
 
 ## ‼️ 프로시저 실행결과
-#### <details> <summary><b> 1. 회원가입 🔑</b></summary> <div markdown="1">
+#### <details> <summary><b> 1. 회원가입 🔑 </b></summary> <div markdown="1">
 ![petleader](https://github.com/beyond-sw-camp/be11-1st-1team-PetLeader/blob/main/dir/images/%ED%9A%8C%EC%9B%90%EA%B0%80%EC%9E%85.gif)
 ```sql
 DELIMITER //
@@ -161,7 +161,7 @@ begin
 //
 DELIMITER ;
 ```
-#### <details> <summary><b> 2. 로그인 🔑</b></summary> <div markdown="1">
+#### <details> <summary><b> 2. 로그인 🔑 </b></summary> <div markdown="1">
 ![petleader](https://github.com/beyond-sw-camp/be11-1st-1team-PetLeader/blob/main/dir/images/%EB%A1%9C%EA%B7%B8%EC%9D%B8%EC%98%81%EC%83%81.gif)
 ```sql
 delimiter //
@@ -180,13 +180,77 @@ delimiter //
     // delimiter ;
 
 ```
-#### <details> <summary><b>1. 회원가입 🔑</b></summary> <div markdown="1">
+#### <details> <summary><b> 3. 비밀번호 수정 🔑 </b></summary> <div markdown="1">
+![petleader](https://github.com/beyond-sw-camp/be11-1st-1team-PetLeader/blob/main/dir/images/%EB%B9%84%EB%B0%80%EB%B2%88%ED%98%B8%EB%B3%80%EA%B2%BD.gif)
+```sql
+delimiter // 
+CREATE PROCEDURE 비밀번호변경하기(in 내이메일 varchar(255), in 내휴대폰번호 varchar(255), in 새로운비밀번호 varchar(255))
+begin
+	declare ownerId bigint;
+	select id into ownerId from owner where email = 내이메일 and phone = 내휴대폰번호;
+	IF ownerId IS NOT NULL THEN
+        UPDATE owner SET password = 새로운비밀번호 WHERE id = ownerId ;
+    END IF ;
+    select password from owner where email = 내이메일  and phone = 내휴대폰번호 ;
+end
+// delimiter ;
+```
+#### <details> <summary><b> 4. 아이디찾기🔑 </b></summary> <div markdown="1">
+![petleader](https://github.com/beyond-sw-camp/be11-1st-1team-PetLeader/blob/main/dir/images/%EC%95%84%EC%9D%B4%EB%94%94%EC%B0%BE%EA%B8%B0.gif)
+```sql
+delimiter //
+CREATE PROCEDURE 아이디찾기(in 내닉네임 varchar(255), in 내휴대폰번호 varchar(255))
+begin
+	declare ownerId bigint;
+	select id into ownerId from owner where nickname = 내닉네임 and phone = 내휴대폰번호;
+	IF ownerId IS NOT NULL THEN
+        select email from owner where id = ownerId;
+    END IF;
+end
+// delimiter //
+```
+#### <details> <summary><b> 5. 아이디찾기🔑 </b></summary> <div markdown="1">
+![petleader](https://github.com/beyond-sw-camp/be11-1st-1team-PetLeader/blob/main/dir/images/%EC%95%84%EC%9D%B4%EB%94%94%EC%B0%BE%EA%B8%B0.gif)
+```sql
+delimiter //
+CREATE PROCEDURE 아이디찾기(in 내닉네임 varchar(255), in 내휴대폰번호 varchar(255))
+begin
+	declare ownerId bigint;
+	select id into ownerId from owner where nickname = 내닉네임 and phone = 내휴대폰번호;
+	IF ownerId IS NOT NULL THEN
+        select email from owner where id = ownerId;
+    END IF;
+end
+// delimiter //
+```
+#### <details> <summary><b> 6.🔑 </b></summary> <div markdown="1">
+![petleader]()
+```sql
+
+// delimiter ;
+```
+#### <details> <summary><b> 7.내정보조회🔑 </b></summary> <div markdown="1">
+![petleader](https://github.com/beyond-sw-camp/be11-1st-1team-PetLeader/blob/main/dir/images/%EB%82%B4%EC%A0%95%EB%B3%B4%EC%A1%B0%ED%9A%8C.gif)
+```sql
+delimiter //
+create procedure 내정보확인(in 내이메일 varchar(50))
+begin
+    select * from owner where email=내이메일;
+end
+// delimiter ;
+```
+#### <details> <summary><b> 7.🔑 </b></summary> <div markdown="1">
+![petleader]()
+```sql
 
 
+```
+#### <details> <summary><b> 7.🔑 </b></summary> <div markdown="1">
+![petleader]()
+```sql
 
-#### <details> <summary><b>1. 회원가입 🔑</b></summary> <div markdown="1">
 
-
+```
 ---
 
 ## ‼️ 회고
