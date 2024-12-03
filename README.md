@@ -428,7 +428,7 @@ end
  // DELIMITER ;
 ```
 #### <details> <summary><b> 18.특정훈련전문강사찾기🔑 </b></summary> <div markdown="1">
-![petleader]()
+![petleader](https://github.com/beyond-sw-camp/be11-1st-1team-PetLeader/blob/main/dir/images/%ED%8A%B9%EC%A0%95%ED%9B%88%EB%A0%A8%EC%A0%84%EB%AC%B8%EA%B0%95%EC%82%AC%EC%B0%BE%EA%B8%B0.gif)
 ```sql
 delimiter //
     create procedure 특정훈련전문강사찾기(in 훈련이름 varchar(255))
