@@ -546,11 +546,48 @@ SELECT '수업을 안들은 보호자 입니다!' AS message;
 END //
 DELIMITER ;
 ```
-#### <details> <summary><b> 28.🔑 </b></summary> <div markdown="1">
+#### <details> <summary><b> 28.쿠폰사용해서결제🔑 </b></summary> <div markdown="1">
 ![petleader]()
 ```sql
-
-
+DELIMITER //
+CREATE PROCEDURE 쿠폰사용해서결제(IN 결제할고객닉네임 varchar(255), IN 결제할훈련이름 varchar(255), IN 사용할쿠폰id BIGINT, IN 결제할금액 INT)
+BEGIN
+declare ownerId bigint;
+    declare classId bigint;
+    DECLARE v_discount INT DEFAULT 0;
+    DECLARE v_coupon_exists INT;
+    DECLARE v_coupon_expiration DATETIME;
+    DECLARE final_amount int;
+select id into ownerId from owner where nickname = 결제할고객닉네임;
+    select oc.id into classId from owner_class oc join trainer_class tc on oc.trainer_class_id = tc.id where tc.name = 결제할훈련이름;
+    SELECT COUNT(), expiration_date INTO v_coupon_exists, v_coupon_expiration
+    FROM owner_coupon
+    WHERE owner_id = ownerId AND coupon_id = 사용할쿠폰id;
+    IF v_coupon_exists > 0 THEN
+        IF v_coupon_expiration > NOW() THEN
+            SELECT discount_amount INTO v_discount
+            FROM coupon
+            WHERE id = 사용할쿠폰id;
+            SET final_amount = 결제할금액 - v_discount;
+            IF final_amount < 0 THEN
+                SET final_amount = 0;
+            END IF;
+        ELSEIF v_coupon_expiration is null then
+        SELECT discount_amount INTO v_discount
+            FROM coupon
+            WHERE id = 사용할쿠폰id;
+            SET final_amount = 결제할금액 - v_discount;
+            ELSE
+            SET final_amount = 결제할금액;
+        END IF;
+    ELSE
+        SET final_amount = 결제할금액;
+    END IF;
+    INSERT INTO payment (owner_id, class_id, coupon_id, amount, payment_date)
+    VALUES (ownerId, classId, 사용할쿠폰id, final_amount, NOW());
+    select from payment where owner_id = ownerId and class_id = classId;
+END //
+DELIMITER ;
 ```
 
 ---
