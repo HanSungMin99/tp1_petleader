@@ -248,14 +248,7 @@ delimiter //
     end
     // delimiter ;
 ```
-
-#### <details> <summary><b> 8.🔑 </b></summary> <div markdown="1">
-![petleader]()
-```sql
-
-```
-
-#### <details> <summary><b> 9.내 강아지 정보 조회🔑 </b></summary> <div markdown="1">
+#### <details> <summary><b> 8.내 강아지 정보 조회🔑 </b></summary> <div markdown="1">
 ![petleader](https://github.com/beyond-sw-camp/be11-1st-1team-PetLeader/blob/main/dir/images/%EB%82%B4%EA%B0%95%EC%95%84%EC%A7%80%EC%A0%95%EB%B3%B4%ED%99%95%EC%9D%B8.gif)
 ```sql
 delimiter //
@@ -269,7 +262,7 @@ end
 // delimiter ;
 ```
 
-#### <details> <summary><b> 10.수강 신청하기🔑 </b></summary> <div markdown="1">
+#### <details> <summary><b> 9.수강 신청하기🔑 </b></summary> <div markdown="1">
 ![petleader](https://github.com/beyond-sw-camp/be11-1st-1team-PetLeader/blob/main/dir/images/%EC%88%98%EA%B0%95%EC%8B%A0%EC%B2%AD%ED%95%98%EA%B8%B0.gif)
 ```sql
 delimiter //
@@ -288,14 +281,22 @@ end
 
 ```
 
-#### <details> <summary><b> 11.🔑 </b></summary> <div markdown="1">
-![petleader]()
+#### <details> <summary><b> 10.수강신청내역조회하기🔑 </b></summary> <div markdown="1">
+![petleader](https://github.com/beyond-sw-camp/be11-1st-1team-PetLeader/blob/main/dir/images/%EC%88%98%EA%B0%95%EC%8B%A0%EC%B2%AD%EB%82%B4%EC%97%AD%EC%A1%B0%ED%9A%8C%ED%95%98%EA%B8%B0.gif)
 ```sql
-
-
+delimiter //
+CREATE PROCEDURE 수강신청내역조회하기(in 내닉네임 varchar(255))
+begin
+declare ownerId bigint;
+declare dogId bigint;
+declare trainerClassId bigint;
+    select id into ownerId from owner where nickname = 내닉네임;
+    select * from owner_class where owner_id = ownerId;
+end
+// delimiter ;
 ```
 
-#### <details> <summary><b> 12.수강하고 싶은 수업을 알림예약 조회🔑 </b></summary> <div markdown="1">
+#### <details> <summary><b> 11.수강하고 싶은 수업을 알림예약 조회🔑 </b></summary> <div markdown="1">
 ![petleader](https://github.com/beyond-sw-camp/be11-1st-1team-PetLeader/blob/main/dir/images/%EB%B3%B8%EC%9D%B8%EC%9D%B4%EC%98%88%EC%95%BD%ED%95%9C%EC%88%98%EC%97%85%EC%A1%B0%ED%9A%8C.gif)
 ```sql
 DELIMITER //
@@ -314,7 +315,7 @@ END
 // DELIMITER ;
 ```
 
-#### <details> <summary><b> 13.강아지 크기별 수업조회🔑 </b></summary> <div markdown="1">
+#### <details> <summary><b> 12.강아지 크기별 수업조회🔑 </b></summary> <div markdown="1">
 ![petleader](https://github.com/beyond-sw-camp/be11-1st-1team-PetLeader/blob/main/dir/images/%EA%B0%95%EC%95%84%EC%A7%80%20%ED%81%AC%EA%B8%B0%EB%B3%84%20%EC%88%98%EC%97%85%EC%A1%B0%ED%9A%8C.gif)
 ```sql
 DELIMITER //
@@ -333,7 +334,7 @@ end
 // DELIMITER ;
 ```
 
-#### <details> <summary><b> 14.수업료 낮은 순으로 수업 정렬🔑 </b></summary> <div markdown="1">
+#### <details> <summary><b> 13.수업료 낮은 순으로 수업 정렬🔑 </b></summary> <div markdown="1">
 ![petleader](https://github.com/beyond-sw-camp/be11-1st-1team-PetLeader/blob/main/dir/images/%EC%88%98%EC%97%85%EB%A3%8C%20%EB%82%AE%EC%9D%80%20%EC%88%9C%EC%9C%BC%EB%A1%9C%20%EC%88%98%EC%97%85%20%EC%A0%95%EB%A0%AC.gif)
 ```sql
 DELIMITER //
@@ -344,7 +345,7 @@ END
 // DELIMITER ;
 ```
 
-#### <details> <summary><b> 15.원하는 요일에 개설되어있는 수업 조회🔑 </b></summary> <div markdown="1">
+#### <details> <summary><b> 14.원하는 요일에 개설되어있는 수업 조회🔑 </b></summary> <div markdown="1">
 ![petleader](https://github.com/beyond-sw-camp/be11-1st-1team-PetLeader/blob/main/dir/images/%EC%9B%90%ED%95%98%EB%8A%94%20%EC%9A%94%EC%9D%BC%EC%97%90%20%EA%B0%9C%EC%84%A4%EB%90%98%EC%96%B4%EC%9E%88%EB%8A%94%20%EC%88%98%EC%97%85%20%EC%A1%B0%ED%9A%8C.gif)
 ```sql
 DELIMITER //
