@@ -145,8 +145,22 @@ INSERT INTO payment (owner_id, class_id, coupon_id, amount, payment_date) VALUES
 
 ## ‼️ 프로시저 실행결과
 #### <details> <summary><b>1. 회원가입 🔑</b></summary> <div markdown="1">
-![petleader](https://github.com/beyond-sw-camp/be11-1st-1team-PetLeader/blob/main/dir/images/%ED%9A%8C%EC%9B%90%EA%B0%80%EC%9E%85.mp4)
+![petleader](https://github.com/beyond-sw-camp/be11-1st-1team-PetLeader/blob/main/dir/images/%ED%9A%8C%EC%9B%90%EA%B0%80%EC%9E%85.gif)
+```sql
+DELIMITER //
+CREATE DEFINER=root@localhost PROCEDURE 회원가입(in 시도 varchar(255), in 시군구 varchar(255), in 상세주소 varchar(255),
+    in 이름 varchar(255), in 전화번호 varchar(255), in 닉네임 varchar(255), in 이메일 varchar(255), in 패스워드 varchar(255))
+begin
+    declare newAddressid bigint;
+    insert into address (state, city, street) values(시도, 시군구, 상세주소);
+    set newAddressId = Last_Insert_ID();
+    insert into owner (name, phone, address_id, nickname, email, password) values(이름, 전화번호, newAddressId, 닉네임, 이메일, 패스워드);
 
+    select * from owner;
+    end
+//
+DELIMITER ;
+```
 #### <details> <summary><b>1. 회원가입 🔑</b></summary> <div markdown="1">
 
 
