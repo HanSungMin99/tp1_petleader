@@ -124,7 +124,7 @@ CREATE TABLE payment(id BIGINT PRIMARY KEY AUTO_INCREMENT, owner_id BIGINT NOT N
 ```sql
 SHOW TABLES;
 
----
+```
 
 ---
 
