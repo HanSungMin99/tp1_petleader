@@ -547,7 +547,7 @@ END //
 DELIMITER ;
 ```
 #### <details> <summary><b> 28.쿠폰사용해서결제🔑 </b></summary> <div markdown="1">
-![petleader]()
+![petleader](https://github.com/beyond-sw-camp/be11-1st-1team-PetLeader/blob/main/dir/images/%EC%BF%A0%ED%8F%B0%EC%82%AC%EC%9A%A9%ED%95%B4%EC%84%9C%EA%B2%B0%EC%A0%9C.gif)
 ```sql
 DELIMITER //
 CREATE PROCEDURE 쿠폰사용해서결제(IN 결제할고객닉네임 varchar(255), IN 결제할훈련이름 varchar(255), IN 사용할쿠폰id BIGINT, IN 결제할금액 INT)
