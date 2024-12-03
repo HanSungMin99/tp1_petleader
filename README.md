@@ -94,39 +94,51 @@
 ## ‼️주요 쿼리 요약
 #### 1. DDL<br>
 ```sql
-CREATE DATABASE pet;<br>
+CREATE DATABASE pet;
 USE pet;<br>
-CREATE TABLE address(id BIGINT PRIMARY KEY AUTO_INCREMENT, state VARCHAR(255) NOT NULL, city VARCHAR(255) NOT NULL, street VARCHAR(255) NOT NULL);<br>
+CREATE TABLE address(id BIGINT PRIMARY KEY AUTO_INCREMENT, state VARCHAR(255) NOT NULL, city VARCHAR(255) NOT NULL, street VARCHAR(255) NOT NULL);
 ```sql
-CREATE TABLE owner (id BIGINT PRIMARY KEY AUTO_INCREMENT, password VARCHAR(255) NOT NULL, address_id BIGINT NOT NULL, name VARCHAR(30) NOT NULL, email VARCHAR(50), phone VARCHAR(255) NOT NULL,  em_phone VARCHAR(255), age INT, valid ENUM("Y","N") NOT NULL, created_time DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP(), nickname VARCHAR(30) NOT NULL UNIQUE, FOREIGN KEY (address_id) REFERENCES address(id));<br>
+CREATE TABLE owner (id BIGINT PRIMARY KEY AUTO_INCREMENT, password VARCHAR(255) NOT NULL, address_id BIGINT NOT NULL, name VARCHAR(30) NOT NULL, email VARCHAR(50), phone VARCHAR(255) NOT NULL,  em_phone VARCHAR(255), age INT, valid ENUM("Y","N") NOT NULL, created_time DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP(), nickname VARCHAR(30) NOT NULL UNIQUE, FOREIGN KEY (address_id) REFERENCES address(id));
 ```sql
-CREATE TABLE dog ( id BIGINT PRIMARY KEY AUTO_INCREMENT, owner_id BIGINT NOT NULL, name VARCHAR(255) NOT NULL, age INT NOT NULL, gender ENUM("male","female") NOT NULL, size ENUM("소","중","대"), sign_date DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP(), FOREIGN KEY (owner_id) REFERENCES owner(id));<br>
+CREATE TABLE dog ( id BIGINT PRIMARY KEY AUTO_INCREMENT, owner_id BIGINT NOT NULL, name VARCHAR(255) NOT NULL, age INT NOT NULL, gender ENUM("male","female") NOT NULL, size ENUM("소","중","대"), sign_date DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP(), FOREIGN KEY (owner_id) REFERENCES owner(id));
 ```sql
-CREATE TABLE trainer(id BIGINT PRIMARY KEY AUTO_INCREMENT, nickname VARCHAR(255) NOT NULL UNIQUE, name VARCHAR(255) NOT NULL, age INT, gender ENUM('male', 'female') NOT NULL, career INT NOT NULL DEFAULT 0);<br>
+CREATE TABLE trainer(id BIGINT PRIMARY KEY AUTO_INCREMENT, nickname VARCHAR(255) NOT NULL UNIQUE, name VARCHAR(255) NOT NULL, age INT, gender ENUM('male', 'female') NOT NULL, career INT NOT NULL DEFAULT 0);
 ```sql
-CREATE TABLE speciality( id BIGINT PRIMARY KEY AUTO_INCREMENT, name VARCHAR(255) NOT NULL, trainer_id BIGINT NOT NULL, FOREIGN KEY (trainer_id) REFERENCES trainer(id));<br>
+CREATE TABLE speciality( id BIGINT PRIMARY KEY AUTO_INCREMENT, name VARCHAR(255) NOT NULL, trainer_id BIGINT NOT NULL, FOREIGN KEY (trainer_id) REFERENCES trainer(id));
 ```sql
-CREATE TABLE chat( id BIGINT PRIMARY KEY AUTO_INCREMENT, sender ENUM('보호자', '훈련사') NOT NULL, lasttime DATETIME DEFAULT CURRENT_TIMESTAMP(), contents VARCHAR(3000) NOT NULL, owner_id BIGINT, trainer_id BIGINT, FOREIGN KEY (owner_id) REFERENCES owner(id), FOREIGN KEY (trainer_id) REFERENCES trainer(id));<br>
+CREATE TABLE chat( id BIGINT PRIMARY KEY AUTO_INCREMENT, sender ENUM('보호자', '훈련사') NOT NULL, lasttime DATETIME DEFAULT CURRENT_TIMESTAMP(), contents VARCHAR(3000) NOT NULL, owner_id BIGINT, trainer_id BIGINT, FOREIGN KEY (owner_id) REFERENCES owner(id), FOREIGN KEY (trainer_id) REFERENCES trainer(id));
 ```sql
-CREATE TABLE trainer_class (id BIGINT PRIMARY KEY NOT NULL AUTO_INCREMENT, trainer_id BIGINT NOT NULL, name VARCHAR(255) NOT NULL, fee INT NOT NULL, location VARCHAR(255) NOT NULL, class_day ENUM('월', '화', '수', '목', '금', '토', '일') NOT NULL, training_time ENUM('1교시', '2교시', '3교시', '4교시', '5교시', '6교시', '7교시', '8교시', '9교시') NOT NULL, description VARCHAR(3000) NOT NULL, size ENUM('대', '중', '소') NOT NULL, limits INT NOT NULL, current INT NOT NULL DEFAULT 0, start_date DATE NOT NULL, FOREIGN KEY (trainer_id) REFERENCES trainer(id));<br>
+CREATE TABLE trainer_class (id BIGINT PRIMARY KEY NOT NULL AUTO_INCREMENT, trainer_id BIGINT NOT NULL, name VARCHAR(255) NOT NULL, fee INT NOT NULL, location VARCHAR(255) NOT NULL, class_day ENUM('월', '화', '수', '목', '금', '토', '일') NOT NULL, training_time ENUM('1교시', '2교시', '3교시', '4교시', '5교시', '6교시', '7교시', '8교시', '9교시') NOT NULL, description VARCHAR(3000) NOT NULL, size ENUM('대', '중', '소') NOT NULL, limits INT NOT NULL, current INT NOT NULL DEFAULT 0, start_date DATE NOT NULL, FOREIGN KEY (trainer_id) REFERENCES trainer(id));
 ```sql
-CREATE TABLE owner_class(id BIGINT PRIMARY KEY AUTO_INCREMENT, owner_id BIGINT NOT NULL, trainer_class_id BIGINT NOT NULL, dog_id BIGINT NOT NULL, classjointime DATETIME DEFAULT CURRENT_TIMESTAMP, FOREIGN KEY (owner_id) REFERENCES owner(id), FOREIGN KEY (trainer_class_id) REFERENCES trainer_class(id), FOREIGN KEY (dog_id) REFERENCES dog(id));<br>
+CREATE TABLE owner_class(id BIGINT PRIMARY KEY AUTO_INCREMENT, owner_id BIGINT NOT NULL, trainer_class_id BIGINT NOT NULL, dog_id BIGINT NOT NULL, classjointime DATETIME DEFAULT CURRENT_TIMESTAMP, FOREIGN KEY (owner_id) REFERENCES owner(id), FOREIGN KEY (trainer_class_id) REFERENCES trainer_class(id), FOREIGN KEY (dog_id) REFERENCES dog(id));
 ```sql
-CREATE TABLE post( post_id BIGINT PRIMARY KEY AUTO_INCREMENT, owner_class_id BIGINT NOT NULL, owner_id BIGINT NOT NULL, title VARCHAR(255) NOT NULL, contents VARCHAR(3000) NOT NULL, rating ENUM('1','2','3','4','5'), FOREIGN KEY (owner_class_id) REFERENCES owner_class(id), FOREIGN KEY (owner_id) REFERENCES owner(id));<br>
+CREATE TABLE post( post_id BIGINT PRIMARY KEY AUTO_INCREMENT, owner_class_id BIGINT NOT NULL, owner_id BIGINT NOT NULL, title VARCHAR(255) NOT NULL, contents VARCHAR(3000) NOT NULL, rating ENUM('1','2','3','4','5'), FOREIGN KEY (owner_class_id) REFERENCES owner_class(id), FOREIGN KEY (owner_id) REFERENCES owner(id));
 ```sql
 CREATE TABLE alarm(id BIGINT PRIMARY KEY AUTO_INCREMENT, trainer_class_id BIGINT NOT NULL, owner_id BIGINT NOT NULL, created_time DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP(), FOREIGN KEY (trainer_class_id) REFERENCES trainer_class(id), FOREIGN KEY (owner_id) REFERENCES owner(id));<br>
 ```sql
-CREATE TABLE coupon ( id BIGINT PRIMARY KEY AUTO_INCREMENT, discount_amount INT NOT NULL, code VARCHAR(255) NOT NULL UNIQUE, name varchar(255) not null);<br>
+CREATE TABLE coupon ( id BIGINT PRIMARY KEY AUTO_INCREMENT, discount_amount INT NOT NULL, code VARCHAR(255) NOT NULL UNIQUE, name varchar(255) not null);
 ```sql
-CREATE TABLE owner_coupon(id BIGINT PRIMARY KEY AUTO_INCREMENT, owner_id bigint not null, coupon_id bigint not null, issue_date datetime not null default current_timestamp(), expiration_date datetime, foreign key(owner_id) references owner(id), foreign key(coupon_id) references coupon(id));<br>
+CREATE TABLE owner_coupon(id BIGINT PRIMARY KEY AUTO_INCREMENT, owner_id bigint not null, coupon_id bigint not null, issue_date datetime not null default current_timestamp(), expiration_date datetime, foreign key(owner_id) references owner(id), foreign key(coupon_id) references coupon(id));
 ```sql
-CREATE TABLE payment(id BIGINT PRIMARY KEY AUTO_INCREMENT, owner_id BIGINT NOT NULL, class_id BIGINT NOT NULL, coupon_id bigint, amount INT NOT NULL, payment_date DATETIME DEFAULT CURRENT_TIMESTAMP(), FOREIGN KEY (owner_id) REFERENCES owner(id), FOREIGN KEY (class_id) REFERENCES owner_class(id), FOREIGN KEY (coupon_id) REFERENCES owner_coupon(id));<br>
+CREATE TABLE payment(id BIGINT PRIMARY KEY AUTO_INCREMENT, owner_id BIGINT NOT NULL, class_id BIGINT NOT NULL, coupon_id bigint, amount INT NOT NULL, payment_date DATETIME DEFAULT CURRENT_TIMESTAMP(), FOREIGN KEY (owner_id) REFERENCES owner(id), FOREIGN KEY (class_id) REFERENCES owner_class(id), FOREIGN KEY (coupon_id) REFERENCES owner_coupon(id));
 ```sql
-SHOW TABLES;<br>
-
+SHOW TABLES;
+```
 #### 2. DML<br>
-
-
+```sql
+INSERT INTO address (state, city, street) VALUES ('서울특별시', '강남구', '압구정로'),('경기도', '수원시', '팔달구');
+INSERT INTO owner (password, address_id, name, email, phone, em_phone, age, valid, nickname) VALUES('password1', 1, '홍길동', 'hong1@naver.com', '010-1234-5678', '010-1111-2222', 30, 'Y', 'hong1'),('password2', 2, '이영희', 'younghee2@google.com', '010-2345-6789', '010-2222-3333', 25, 'Y', 'leeyoung');
+INSERT INTO dog (owner_id, name, age, gender, size) VALUES(1, '바둑이', 2, 'male', '중'),(1, '흰둥이', 1, 'female', '소');
+INSERT INTO trainer (nickname, name, age, gender, career) VALUES('trainer1', '김훈련', 40, 'male', 10),('trainer2', '이훈련', 35, 'female', 8);
+INSERT INTO speciality (name, trainer_id) VALUES('기본 훈련', 1),('복종 훈련', 2);
+INSERT INTO chat (sender, lasttime, contents, owner_id, trainer_id) VALUES('보호자', CURRENT_TIMESTAMP(), '안녕하세요, 강아지 훈련 관련 상담 문의드립니다.', 1, 1),('훈련사', CURRENT_TIMESTAMP(), '안녕하세요! 상담 도와드리겠습니다.', 1, 1);
+INSERT INTO trainer_class (trainer_id, name, fee, location, class_day, training_time, description, size, limits, current, start_date) VALUES(1, '기본 복종 훈련', 100000, '서울 강남구', '월', '1교시', '기본적인 복종 훈련 프로그램입니다.', '중', 10, 5, '2024-12-10'),(2, '사회성 향상 훈련', 120000, '서울 마포구', '화', '2교시', '강아지의 사회성을 키우는 훈련입니다.', '대', 8, 4, '2024-12-11');
+INSERT INTO owner_class (owner_id, trainer_class_id, dog_id, classjointime) VALUES(1, 1, 1, CURRENT_TIMESTAMP()),(1, 2, 2, CURRENT_TIMESTAMP());
+INSERT INTO post (owner_class_id, owner_id, title, contents, rating) VALUES(1, 1, '기본 복종 훈련 후기', '강아지가 말을 잘 듣게 되었어요!', '5'),(2, 2, '사회성 향상 후기', '강아지가 다른 개들과 잘 어울리게 되었어요.', '4');
+INSERT INTO alarm (trainer_class_id, owner_id, created_time) VALUES(1, 1, CURRENT_TIMESTAMP()),(2, 2, CURRENT_TIMESTAMP());
+INSERT INTO coupon (discount_amount, code, name) VALUES(10000, 'COUPON10', '10% 할인 쿠폰'),(15000, 'COUPON15', '15% 할인 쿠폰');
+INSERT INTO owner_coupon (owner_id, coupon_id, issue_date, expiration_date) VALUES(1, 1, CURRENT_TIMESTAMP(), '2024-12-31'),(2, 2, CURRENT_TIMESTAMP(), '2024-12-31');
+INSERT INTO payment (owner_id, class_id, coupon_id, amount, payment_date) VALUES(1, 1, 1, 90000, CURRENT_TIMESTAMP()),(2, 2, 2, 105000, CURRENT_TIMESTAMP());
 ```
 
 ---
