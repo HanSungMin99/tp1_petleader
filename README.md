@@ -91,5 +91,5 @@
 ---
 
 ## ‼️ 프로시저 실행결과
-#### 1. 회원가입 🔑
+#### <details> <summary><b>1. 회원가입 🔑</b></summary> <div markdown="1">
 
