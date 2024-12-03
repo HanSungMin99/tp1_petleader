@@ -100,8 +100,6 @@
 ---
 
 ## ‼️주요 쿼리 요약
-<details>
-<summary>
 #### 1. DDL<br>
 ```sql
 CREATE DATABASE pet;
@@ -150,7 +148,6 @@ INSERT INTO coupon (discount_amount, code, name) VALUES(10000, 'COUPON10', '10% 
 INSERT INTO owner_coupon (owner_id, coupon_id, issue_date, expiration_date) VALUES(1, 1, CURRENT_TIMESTAMP(), '2024-12-31'),(2, 2, CURRENT_TIMESTAMP(), '2024-12-31');
 INSERT INTO payment (owner_id, class_id, coupon_id, amount, payment_date) VALUES(1, 1, 1, 90000, CURRENT_TIMESTAMP()),(2, 2, 2, 105000, CURRENT_TIMESTAMP());
 ```
-</summary>
 	
 ---
 
