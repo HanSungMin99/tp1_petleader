@@ -478,19 +478,21 @@ end
 // delimiter ;
 ```
 
-#### <details> <summary><b> 22.🔑 </b></summary> <div markdown="1">
-![petleader]()
+#### <details> <summary><b> 22.훈련사닉네임으로별점확인🔑 </b></summary> <div markdown="1">
+![petleader](https://github.com/beyond-sw-camp/be11-1st-1team-PetLeader/blob/main/dir/images/%ED%9B%88%EB%A0%A8%EC%82%AC%EB%8B%89%EB%84%A4%EC%9E%84%EC%9C%BC%EB%A1%9C%EB%B3%84%EC%A0%90%ED%99%95%EC%9D%B8.gif)
 ```sql
+delimiter //
+CREATE PROCEDURE 훈련사닉네임으로별점확인(in 훈련사닉네임 varchar(30))
+begin
+select p.rating from post p inner join owner_class oc on p.owner_class_id = oc.id inner join trainer_class tc on oc.trainer_class_id = tc.id
+inner join trainer t on tc.trainer_id = t.id where t.nickname = 훈련사닉네임;
+end
 
+// delimiter ;
 
 ```
-#### <details> <summary><b> 23.🔑 </b></summary> <div markdown="1">
-![petleader]()
-```sql
 
-
-```
-#### <details> <summary><b> 24.내결제정보조회🔑 </b></summary> <div markdown="1">
+#### <details> <summary><b> 23.내결제정보조회🔑 </b></summary> <div markdown="1">
 ![petleader](https://github.com/beyond-sw-camp/be11-1st-1team-PetLeader/blob/main/dir/images/%EB%82%B4%EA%B2%B0%EC%A0%9C%EC%A0%95%EB%B3%B4%EC%A1%B0%ED%9A%8C.gif)
 ```sql
 delimiter //
@@ -504,7 +506,7 @@ end
 // delimiter ;
 
 ```
-#### <details> <summary><b> 25.남은기간이빨리만기되는쿠폰조회🔑 </b></summary> <div markdown="1">
+#### <details> <summary><b> 24.남은기간이빨리만기되는쿠폰조회🔑 </b></summary> <div markdown="1">
 ![petleader](https://github.com/beyond-sw-camp/be11-1st-1team-PetLeader/blob/main/dir/images/%EB%82%A8%EC%9D%80%EA%B8%B0%EA%B0%84%EC%9D%B4%EB%B9%A8%EB%A6%AC%EB%A7%8C%EA%B8%B0%EB%90%98%EB%8A%94%EC%BF%A0%ED%8F%B0%EC%A1%B0%ED%9A%8C.gif)
 ```sql
 DELIMITER //
@@ -518,7 +520,7 @@ END //
 
 DELIMITER ;
 ```
-#### <details> <summary><b> 26.내가받은쿠폰중할인금액이큰순으로나열🔑 </b></summary> <div markdown="1">
+#### <details> <summary><b> 25.내가받은쿠폰중할인금액이큰순으로나열🔑 </b></summary> <div markdown="1">
 ![petleader](https://github.com/beyond-sw-camp/be11-1st-1team-PetLeader/blob/main/dir/images/%EB%82%B4%EA%B0%80%EB%B0%9B%EC%9D%80%EC%BF%A0%ED%8F%B0%EC%A4%91%ED%95%A0%EC%9D%B8%EA%B8%88%EC%95%A1%EC%9D%B4%ED%81%B0%EC%88%9C%EC%9C%BC%EB%A1%9C%EB%82%98%EC%97%B4.gif)
 ```sql
 DELIMITER //
@@ -534,7 +536,7 @@ declare ownerId bigint;
 END //
 DELIMITER ;
 ```
-#### <details> <summary><b> 27.수업들은고객에게쿠폰발급🔑 </b></summary> <div markdown="1">
+#### <details> <summary><b> 26.수업들은고객에게쿠폰발급🔑 </b></summary> <div markdown="1">
 ![petleader](https://github.com/beyond-sw-camp/be11-1st-1team-PetLeader/blob/main/dir/images/%EC%88%98%EC%97%85%EB%93%A4%EC%9D%80%EA%B3%A0%EA%B0%9D%EC%97%90%EA%B2%8C%EC%BF%A0%ED%8F%B0%EB%B0%9C%EA%B8%89.gif)
 ```sql
 DELIMITER //
@@ -557,7 +559,7 @@ SELECT '수업을 안들은 보호자 입니다!' AS message;
 END //
 DELIMITER ;
 ```
-#### <details> <summary><b> 28.쿠폰사용해서결제🔑 </b></summary> <div markdown="1">
+#### <details> <summary><b> 27.쿠폰사용해서결제🔑 </b></summary> <div markdown="1">
 ![petleader](https://github.com/beyond-sw-camp/be11-1st-1team-PetLeader/blob/main/dir/images/%EC%BF%A0%ED%8F%B0%EC%82%AC%EC%9A%A9%ED%95%B4%EC%84%9C%EA%B2%B0%EC%A0%9C.gif)
 ```sql
 DELIMITER //
